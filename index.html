@@ -300,23 +300,144 @@ a:focus-visible, button:focus-visible {
 <section class="py-16 sm:py-20 bg-white dark:bg-gray-800 border-y border-gray-100 dark:border-gray-700" id="sobre-mi">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+            
             <!-- Sticky Sidebar -->
             <div class="lg:w-1/3 flex flex-col gap-6 lg:sticky lg:top-24">
-                <h2 class="font-display text-3xl sm:text-4xl font-bold text-text-main dark:text-white relative inline-block">
-                    Sobre Mí
-                    <span class="absolute -bottom-2 left-0 w-1/3 h-1 bg-accent"></span>
-                </h2>
-                <p class="text-base sm:text-lg text-text-muted dark:text-gray-300 leading-relaxed font-light">
+                
+                <!-- Título con animación -->
+                <div class="overflow-hidden">
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-text-main dark:text-white relative inline-block animate-slide-in">
+                        Sobre Mí
+                        <span class="absolute -bottom-2 left-0 w-1/3 h-1 bg-accent animate-expand"></span>
+                    </h2>
+                </div>
+                
+                <!-- Descripción con fade-in -->
+                <p class="text-base sm:text-lg text-text-muted dark:text-gray-300 leading-relaxed font-light animate-fade-in-up" style="animation-delay: 0.2s;">
                     Licenciado en Historia y Licenciado en Educación por la Universidad Austral de Chile. Mi enfoque académico busca integrar la comprensión espacial del territorio con los procesos históricos que lo han moldeado.
                 </p>
-                <div class="flex items-center gap-4 mt-2">
-                    <img alt="Camilo Pinto Godoy" class="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-primary dark:border-accent" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJF-spkV2uqhTsae7iA8oUx0df0bP77E4vL1b11r-tDIB1evhu0NSXOjlaEUYCQ1iiS6UwgZblGEQ-0CHluZdtcdwonrcP0mbTRzZ2bPrBqYyQnVLOD2x63gUKHagStB-nFt5t3bITVUEUCEr0E_7w-GEpk-OehPUHZ0n7RwDkQlH5NPvIao_RDo2aH8ml5VlZqqClwi5EnEe5u_hq1lUmOBTBn3SNuGPEv0sS8pNDuf8bmfB0WkHfA8vYfOOaCXwRh4cc1bgrFoz8"/>
-                    <div>
-                        <p class="font-display font-bold text-base sm:text-lg dark:text-white">Camilo P. Godoy</p>
-                        <p class="text-xs sm:text-sm text-text-muted dark:text-gray-400">Universidad Austral de Chile</p>
+                
+                <!-- Tarjeta de Perfil con efectos premium -->
+                <div class="flex items-center gap-4 mt-2 p-4 rounded-xl bg-gradient-to-br from-gray-50 to-white dark:from-gray-700 dark:to-gray-800 border border-gray-200 dark:border-gray-600 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 animate-fade-in-up group" style="animation-delay: 0.4s;">
+                    
+                    <!-- Imagen con efectos hover -->
+                    <div class="relative">
+                        <img 
+                            alt="Camilo Pinto Godoy - Historiador y Geógrafo" 
+                            class="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-3 border-primary dark:border-accent shadow-md group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 ring-2 ring-primary/20 dark:ring-accent/20 group-hover:ring-4 group-hover:ring-primary/40 dark:group-hover:ring-accent/40" 
+                            loading="lazy" 
+                            src="https://pbs.twimg.com/profile_images/1860280939978379264/v4FFisMo.jpg"
+                        />
+                        <!-- Badge verificado con animación -->
+                        <div class="absolute -bottom-1 -right-1 w-6 h-6 bg-primary dark:bg-accent rounded-full flex items-center justify-center border-2 border-white dark:border-gray-800 shadow-sm group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-white text-sm animate-pulse">verified</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Info con animación hover -->
+                    <div class="flex-1">
+                        <p class="font-display font-bold text-base sm:text-lg text-text-main dark:text-white group-hover:text-primary dark:group-hover:text-accent transition-colors duration-300">
+                            Camilo Pinto Godoy
+                        </p>
+                        <p class="text-xs sm:text-sm text-text-muted dark:text-gray-400 flex items-center gap-1 mt-1">
+                            <span class="material-symbols-outlined text-base">school</span>
+                            Universidad Austral de Chile
+                        </p>
+                        <!-- Badge académico -->
+                        <div class="flex items-center gap-2 mt-2">
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-primary/10 dark:bg-accent/20 text-primary dark:text-accent border border-primary/20 dark:border-accent/30">
+                                🎓 Docente
+                            </span>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-primary/10 dark:bg-accent/20 text-primary dark:text-accent border border-primary/20 dark:border-accent/30">
+                                📚 Investigador
+                            </span>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Botón de contacto adicional (opcional) -->
+                <a href="mailto:camilo.pinto@uach.cl" class="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-primary dark:bg-accent hover:bg-primary-dark dark:hover:bg-accent-dark rounded-lg shadow-soft hover:shadow-hover transition-all duration-300 group animate-fade-in-up" style="animation-delay: 0.6s;">
+                    <span class="material-symbols-outlined text-xl group-hover:rotate-12 transition-transform">mail</span>
+                    Enviar mensaje
+                </a>
+                
             </div>
+
+            <!-- Cards Grid (mantén el código existente aquí) -->
+            <div class="lg:w-2/3 grid sm:grid-cols-2 gap-6">
+                <!-- Aquí van tus tarjetas de Geografía Social, Didáctica, etc. -->
+                <!-- ... resto del código ... -->
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- CSS para las animaciones -->
+<style>
+/* Animaciones de entrada */
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes expand {
+    from {
+        width: 0;
+    }
+    to {
+        width: 33.333%;
+    }
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slide-in {
+    animation: slide-in 0.6s ease-out;
+}
+
+.animate-expand {
+    animation: expand 0.8s ease-out 0.3s backwards;
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out backwards;
+}
+
+/* Efecto de brillo en hover (opcional) */
+.group:hover .animate-pulse {
+    animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Gradiente animado en el borde de la imagen */
+@keyframes rotate-gradient {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.group:hover img {
+    animation: rotate-gradient 3s linear infinite;
+}
+</style>
 
             <!-- Cards Grid -->
             <div class="lg:w-2/3 grid sm:grid-cols-2 gap-6">
@@ -550,7 +671,7 @@ a:focus-visible, button:focus-visible {
             <div class="lg:col-span-1">
                 <div class="flex items-center gap-2 mb-6">
                     <span class="material-symbols-outlined text-accent text-3xl">school</span>
-                    <span class="font-display font-bold text-2xl tracking-tight">Camilo P. Godoy</span>
+                    <span class="font-display font-bold text-2xl tracking-tight">Camilo Pinto Godoy</span>
                 </div>
                 <p class="text-gray-400 text-sm leading-relaxed mb-6">
                     Profesor de Historia y Geografía. Comprometido con la educación pública y la investigación territorial desde el sur de Chile.
