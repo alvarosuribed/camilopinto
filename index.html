@@ -1,414 +1,902 @@
 <!DOCTYPE html>
-<html class="light" lang="es"><head>
+<html class="light" lang="es">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Camilo Pinto Godoy - Historiador &amp; Geógrafo</title>
+<title>Camilo Pinto Godoy - Historiador & Geógrafo</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Historiador y Geógrafo especializado en territorio, geografía social y didáctica. Universidad Austral de Chile."/>
+<meta name="keywords" content="historia, geografía, Valdivia, Chile, educación, territorio"/>
+<meta name="author" content="Camilo Pinto Godoy"/>
+
+<!-- Preconnect -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+<!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
 <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#064E3B", // Valdivian Forest Green
-                        "primary-dark": "#022c22", // Darker Forest Green
-                        "accent": "#D4AF37", // Gold/Ocher
-                        "background-light": "#FDFBF7", // Off-white/Paper
-                        "background-dark": "#334155", // Slate Grey (Rainy aesthetic)
-                        "text-main": "#1F2937", // Charcoal
-                        "text-muted": "#4B5563",
-                    },
-                    fontFamily: {
-                        "display": ["Playfair Display", "serif"],
-                        "body": ["Inter", "sans-serif"],
-                    },
-                    boxShadow: {
-                        'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
-                        'hover': '0 10px 15px -3px rgba(6, 78, 59, 0.15), 0 4px 6px -2px rgba(6, 78, 59, 0.1)',
-                    }
-                },
+tailwind.config = {
+    darkMode: "class",
+    theme: {
+        extend: {
+            colors: {
+                "primary": "#065F46", // Emerald 800 - Mejor contraste
+                "primary-dark": "#064E3B", // Emerald 900
+                "accent": "#F59E0B", // Amber 500 - Mejor visibilidad
+                "accent-dark": "#D97706", // Amber 600
+                "background-light": "#FFFFFF",
+                "background-dark": "#1F2937", // Gray 800
+                "text-main": "#111827", // Gray 900
+                "text-muted": "#6B7280", // Gray 500
+                "text-dark": "#F9FAFB", // Gray 50
             },
-        }
-    </script>
-<style>body {
-            font-family: 'Inter', sans-serif;
-            background-color: #FDFBF7;
-            color: #1F2937;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-        }
-        .text-accent-gradient {
-            background: linear-gradient(to right, #064E3B, #D4AF37);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }@keyframes float-topo {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
-            100% { transform: translateY(0px); }
-        }
-        .topo-lines {
-            animation: float-topo 10s ease-in-out infinite;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+            fontFamily: {
+                "display": ["Playfair Display", "serif"],
+                "body": ["Inter", "sans-serif"],
+            },
+            boxShadow: {
+                'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                'hover': '0 10px 15px -3px rgba(6, 95, 70, 0.15), 0 4px 6px -2px rgba(6, 95, 70, 0.1)',
+            }
+        },
+    },
+}
+</script>
+
+<style>
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FFFFFF;
+    color: #111827;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body {
+    background-color: #1F2937;
+    color: #F9FAFB;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+}
+
+.text-accent-gradient {
+    background: linear-gradient(to right, #065F46, #F59E0B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes float-topo {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+
+.topo-lines {
+    animation: float-topo 10s ease-in-out infinite;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mobile Menu Animations */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.mobile-menu-enter {
+    animation: slideDown 0.3s ease-out;
+}
+
+.mobile-menu-backdrop {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Prevent scroll when menu is open */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Better focus states for accessibility */
+a:focus-visible, button:focus-visible {
+    outline: 2px solid #F59E0B;
+    outline-offset: 2px;
+}
+
+/* Dark mode transitions */
+* {
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+/* Improved contrast for dark mode */
+.dark .bg-white {
+    background-color: #374151 !important; /* Gray 700 */
+}
+
+.dark .border-gray-200 {
+    border-color: #4B5563 !important; /* Gray 600 */
+}
+
+.dark .text-text-main {
+    color: #F9FAFB !important; /* Gray 50 */
+}
+
+.dark .text-text-muted {
+    color: #D1D5DB !important; /* Gray 300 */
+}
+
+/* Loading animation for theme toggle */
+.theme-toggle-loading {
+    animation: spin 0.5s linear;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive improvements */
+@media (max-width: 640px) {
+    h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    .hero-image-container {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+}
+</style>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-text-main antialiased selection:bg-primary/20 selection:text-primary">
-<header class="sticky top-0 z-50 w-full bg-[#FDFBF7]/90 dark:bg-[#334155]/90 backdrop-blur-md border-b border-[#e5e7eb] dark:border-slate-700">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex items-center justify-between h-20">
-<div class="flex-shrink-0 flex items-center gap-3">
-<span class="material-symbols-outlined text-primary dark:text-accent text-3xl">map</span>
-<a class="font-display font-bold text-2xl text-primary dark:text-white tracking-tight" href="#">Camilo Pinto Godoy</a>
-</div>
-<nav class="hidden md:flex space-x-8">
-<a class="text-sm font-medium text-text-main hover:text-primary transition-colors dark:text-gray-200 dark:hover:text-accent" href="#">Inicio</a>
-<a class="text-sm font-medium text-text-main hover:text-primary transition-colors dark:text-gray-200 dark:hover:text-accent" href="#analisis">Análisis</a>
-<a class="text-sm font-medium text-text-main hover:text-primary transition-colors dark:text-gray-200 dark:hover:text-accent" href="#sobre-mi">Sobre Mí</a>
-<a class="text-sm font-medium text-text-main hover:text-primary transition-colors dark:text-gray-200 dark:hover:text-accent" href="#recursos">Recursos</a>
-<a class="text-sm font-medium text-text-main hover:text-primary transition-colors dark:text-gray-200 dark:hover:text-accent" href="#contacto">Contacto</a>
-</nav>
-<div class="md:hidden flex items-center">
-<button class="text-text-main hover:text-primary dark:text-white" type="button">
-<span class="material-symbols-outlined text-3xl">menu</span>
-</button>
-</div>
-</div>
-</div>
+
+<body class="bg-white dark:bg-background-dark text-text-main dark:text-text-dark antialiased selection:bg-primary/20 selection:text-primary">
+
+<!-- HEADER WITH MOBILE MENU & DARK MODE TOGGLE -->
+<header class="sticky top-0 z-50 w-full bg-white/95 dark:bg-gray-800/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 sm:h-20">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center gap-2 sm:gap-3">
+                <span class="material-symbols-outlined text-primary dark:text-accent text-2xl sm:text-3xl">map</span>
+                <a class="font-display font-bold text-lg sm:text-2xl text-primary dark:text-white tracking-tight hover:text-primary-dark dark:hover:text-accent transition-colors" href="#">
+                    Camilo Pinto Godoy
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a class="text-sm font-medium text-text-main dark:text-gray-200 hover:text-primary dark:hover:text-accent transition-colors" href="#inicio">Inicio</a>
+                <a class="text-sm font-medium text-text-main dark:text-gray-200 hover:text-primary dark:hover:text-accent transition-colors" href="#analisis">Análisis</a>
+                <a class="text-sm font-medium text-text-main dark:text-gray-200 hover:text-primary dark:hover:text-accent transition-colors" href="#sobre-mi">Sobre Mí</a>
+                <a class="text-sm font-medium text-text-main dark:text-gray-200 hover:text-primary dark:hover:text-accent transition-colors" href="#recursos">Recursos</a>
+                <a class="text-sm font-medium text-text-main dark:text-gray-200 hover:text-primary dark:hover:text-accent transition-colors" href="#contacto">Contacto</a>
+                
+                <!-- Dark Mode Toggle (Desktop) -->
+                <button id="theme-toggle-desktop" aria-label="Cambiar tema" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                    <span class="material-symbols-outlined text-2xl text-gray-700 dark:text-gray-200 theme-icon">
+                        dark_mode
+                    </span>
+                </button>
+            </nav>
+
+            <!-- Mobile Menu Button & Dark Mode -->
+            <div class="flex md:hidden items-center gap-2">
+                <!-- Dark Mode Toggle (Mobile) -->
+                <button id="theme-toggle-mobile" aria-label="Cambiar tema" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                    <span class="material-symbols-outlined text-2xl text-gray-700 dark:text-gray-200 theme-icon">
+                        dark_mode
+                    </span>
+                </button>
+                
+                <!-- Hamburger Button -->
+                <button id="mobile-menu-button" aria-label="Abrir menú" aria-expanded="false" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                    <span class="material-symbols-outlined text-3xl text-gray-700 dark:text-gray-200" id="menu-icon">
+                        menu
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden">
+        <nav class="px-4 pt-2 pb-4 space-y-2 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+            <a href="#inicio" class="mobile-menu-link block px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-accent rounded-lg transition-colors">
+                Inicio
+            </a>
+            <a href="#analisis" class="mobile-menu-link block px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-accent rounded-lg transition-colors">
+                Análisis
+            </a>
+            <a href="#sobre-mi" class="mobile-menu-link block px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-accent rounded-lg transition-colors">
+                Sobre Mí
+            </a>
+            <a href="#recursos" class="mobile-menu-link block px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-accent rounded-lg transition-colors">
+                Recursos
+            </a>
+            <a href="#contacto" class="mobile-menu-link block px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-accent rounded-lg transition-colors">
+                Contacto
+            </a>
+        </nav>
+    </div>
 </header>
-<section class="relative overflow-hidden pt-12 pb-20 lg:pt-24 lg:pb-32">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-<div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-<div class="flex flex-col gap-6 text-left order-2 lg:order-1">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 w-fit border border-primary/20">
-<span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-<span class="text-xs font-semibold text-primary uppercase tracking-wider">Nueva Publicación: Región de Los Ríos</span>
-</div>
-<h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight text-text-main dark:text-white tracking-tight">
-                        Pensar el <span class="italic text-primary dark:text-accent relative">territorio
-                        <svg class="absolute w-full h-3 bottom-1 left-0 text-accent/30 -z-10" preserveAspectRatio="none" viewBox="0 0 100 10"><path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" stroke-width="8"></path></svg>
-</span> para comprender la historia.
-                    </h1>
-<h2 class="font-body text-lg sm:text-xl text-text-muted dark:text-gray-300 font-light border-l-4 border-accent pl-4">
-                        Historiador | Geógrafo | Educador
-                    </h2>
-<div class="pt-4 flex flex-col sm:flex-row gap-4">
-<a class="inline-flex items-center justify-center px-8 py-3.5 text-base font-semibold text-white transition-all duration-200 bg-primary border border-transparent rounded-lg hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary shadow-soft hover:shadow-hover" href="#analisis">
-                            Leer mis análisis
-                        </a>
-<a class="inline-flex items-center justify-center px-8 py-3.5 text-base font-medium text-primary transition-all duration-200 bg-transparent border border-primary/30 rounded-lg hover:bg-primary/5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:text-white dark:border-white/30 dark:hover:bg-white/10" href="#sobre-mi">
-                            Conocer más
-                        </a>
-</div>
-</div>
-<div class="relative order-1 lg:order-2 flex justify-center lg:justify-end">
-<div class="relative w-full max-w-lg aspect-square">
-<div class="absolute inset-0 bg-primary/10 rounded-full blur-3xl scale-90"></div>
-<div class="relative h-full w-full rounded-tr-[100px] rounded-bl-[100px] overflow-hidden shadow-2xl border-4 border-white dark:border-slate-600 z-10 bg-primary" data-alt="Abstract topographic composition">
-<svg class="absolute inset-0 w-full h-full opacity-30 text-white z-20 topo-lines" preserveAspectRatio="none" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-<path d="M0,100 Q100,50 200,100 T400,100 M0,150 Q100,100 200,150 T400,150 M0,200 Q100,150 200,200 T400,200 M0,250 Q100,200 200,250 T400,250 M0,300 Q100,250 200,300 T400,300" fill="none" stroke="currentColor" stroke-width="1.5"></path>
-<path d="M0,50 Q150,0 300,50 T450,50" fill="none" opacity="0.5" stroke="currentColor" stroke-dasharray="10 5" stroke-width="1"></path>
-</svg>
-<img alt="Texture map background" class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay" data-alt="Antique world map texture in sepia tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB4ZqzOgPQ8I-E1X1VL02jrhcWHO9sq6jPG4bp4lfJcxuPLtV6-ydd-7UGQsQnLq2ijcY0ZQD6GMgugTYcJIZG1MBiZUfszRK7LMkDhxR4nV99rHZw5vf2j1oVlM-WuxZH9TmLwvFh79pPbQY9ohbmXyghPzLiWwzqSflnGRmiIlLy4WV8ZrrmWlkbVAI6C2I1tQ_5rZGrX7s6K9lcekxEpxTZnkb8YybgiYbtWA57QVLJWW0Gb4eAiagpAbrCmQsdd0rJVJKWrwSd"/>
-<div class="absolute inset-0 bg-gradient-to-tr from-primary to-transparent mix-blend-multiply"></div>
-<div class="absolute bottom-8 left-8 right-8 text-white p-6 bg-primary/20 backdrop-blur-sm border border-white/20 rounded-xl z-30">
-<p class="font-display italic text-2xl">"El paisaje es historia congelada."</p>
-<p class="text-sm mt-2 opacity-80 uppercase tracking-widest text-accent">— Adaptación Geográfica</p>
-</div>
-</div>
-<div class="absolute -top-6 -right-6 w-24 h-24 border-2 border-accent rounded-full z-0 opacity-60"></div>
-<div class="absolute -bottom-6 -left-6 w-32 h-32 bg-accent/10 rounded-full z-0 mix-blend-multiply"></div>
-</div>
-</div>
-</div>
-</div>
+
+<!-- HERO SECTION -->
+<section id="inicio" class="relative overflow-hidden pt-12 pb-20 lg:pt-24 lg:pb-32 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-background-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+            <!-- Text Content -->
+            <div class="flex flex-col gap-6 text-left order-2 lg:order-1">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 dark:bg-accent/20 w-fit border border-primary/20 dark:border-accent/30">
+                    <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                    <span class="text-xs font-semibold text-primary dark:text-accent uppercase tracking-wider">Nueva Publicación: Región de Los Ríos</span>
+                </div>
+                
+                <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-text-main dark:text-white tracking-tight">
+                    Pensar el <span class="italic text-primary dark:text-accent relative">territorio
+                    <svg class="absolute w-full h-3 bottom-1 left-0 text-accent/30 -z-10" preserveAspectRatio="none" viewBox="0 0 100 10">
+                        <path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" stroke-width="8"></path>
+                    </svg>
+                    </span> para comprender la historia.
+                </h1>
+                
+                <h2 class="font-body text-base sm:text-lg lg:text-xl text-text-muted dark:text-gray-300 font-light border-l-4 border-accent pl-4">
+                    Historiador | Geógrafo | Educador
+                </h2>
+                
+                <div class="pt-4 flex flex-col sm:flex-row gap-4">
+                    <a class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-semibold text-white transition-all duration-200 bg-primary hover:bg-primary-dark border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary shadow-soft hover:shadow-hover" href="#analisis">
+                        Leer mis análisis
+                    </a>
+                    <a class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-medium text-primary dark:text-white transition-all duration-200 bg-transparent border border-primary/30 dark:border-white/30 rounded-lg hover:bg-primary/5 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" href="#sobre-mi">
+                        Conocer más
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="relative order-1 lg:order-2 flex justify-center lg:justify-end hero-image-container">
+                <div class="relative w-full max-w-lg aspect-square">
+                    <div class="absolute inset-0 bg-primary/10 dark:bg-accent/10 rounded-full blur-3xl scale-90"></div>
+                    <div class="relative h-full w-full rounded-tr-[80px] sm:rounded-tr-[100px] rounded-bl-[80px] sm:rounded-bl-[100px] overflow-hidden shadow-2xl border-4 border-white dark:border-gray-700 z-10 bg-primary dark:bg-primary-dark">
+                        <svg class="absolute inset-0 w-full h-full opacity-30 text-white z-20 topo-lines" preserveAspectRatio="none" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0,100 Q100,50 200,100 T400,100 M0,150 Q100,100 200,150 T400,150 M0,200 Q100,150 200,200 T400,200 M0,250 Q100,200 200,250 T400,250 M0,300 Q100,250 200,300 T400,300" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+                            <path d="M0,50 Q150,0 300,50 T450,50" fill="none" opacity="0.5" stroke="currentColor" stroke-dasharray="10 5" stroke-width="1"></path>
+                        </svg>
+                        <img alt="Mapa histórico texturizado" class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB4ZqzOgPQ8I-E1X1VL02jrhcWHO9sq6jPG4bp4lfJcxuPLtV6-ydd-7UGQsQnLq2ijcY0ZQD6GMgugTYcJIZG1MBiZUfszRK7LMkDhxR4nV99rHZw5vf2j1oVlM-WuxZH9TmLwvFh79pPbQY9ohbmXyghPzLiWwzqSflnGRmiIlLy4WV8ZrrmWlkbVAI6C2I1tQ_5rZGrX7s6K9lcekxEpxTZnkb8YybgiYbtWA57QVLJWW0Gb4eAiagpAbrCmQsdd0rJVJKWrwSd"/>
+                        <div class="absolute inset-0 bg-gradient-to-tr from-primary to-transparent mix-blend-multiply"></div>
+                        <div class="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 right-4 sm:right-8 text-white p-4 sm:p-6 bg-primary/20 backdrop-blur-sm border border-white/20 rounded-xl z-30">
+                            <p class="font-display italic text-lg sm:text-2xl">"El paisaje es historia congelada."</p>
+                            <p class="text-xs sm:text-sm mt-2 opacity-80 uppercase tracking-widest text-accent">— Adaptación Geográfica</p>
+                        </div>
+                    </div>
+                    <div class="absolute -top-4 sm:-top-6 -right-4 sm:-right-6 w-16 sm:w-24 h-16 sm:h-24 border-2 border-accent rounded-full z-0 opacity-60"></div>
+                    <div class="absolute -bottom-4 sm:-bottom-6 -left-4 sm:-left-6 w-20 sm:w-32 h-20 sm:h-32 bg-accent/10 rounded-full z-0 mix-blend-multiply"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
-<section class="py-20 bg-white dark:bg-slate-800 border-y border-gray-100 dark:border-slate-700" id="sobre-mi">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex flex-col lg:flex-row gap-16 items-start">
-<div class="lg:w-1/3 flex flex-col gap-6 sticky top-24">
-<h2 class="font-display text-4xl font-bold text-text-main dark:text-white relative inline-block">
-                        Sobre Mí
-                        <span class="absolute -bottom-2 left-0 w-1/3 h-1 bg-accent"></span>
-</h2>
-<p class="text-lg text-text-muted dark:text-gray-300 leading-relaxed font-light">
-                        Licenciado en Historia y Licenciado en Educación por la Universidad Austral de Chile. Mi enfoque académico busca integrar la comprensión espacial del territorio con los procesos históricos que lo han moldeado.
+
+<!-- SOBRE MÍ SECTION -->
+<section class="py-16 sm:py-20 bg-white dark:bg-gray-800 border-y border-gray-100 dark:border-gray-700" id="sobre-mi">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+            <!-- Sticky Sidebar -->
+            <div class="lg:w-1/3 flex flex-col gap-6 lg:sticky lg:top-24">
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-text-main dark:text-white relative inline-block">
+                    Sobre Mí
+                    <span class="absolute -bottom-2 left-0 w-1/3 h-1 bg-accent"></span>
+                </h2>
+                <p class="text-base sm:text-lg text-text-muted dark:text-gray-300 leading-relaxed font-light">
+                    Licenciado en Historia y Licenciado en Educación por la Universidad Austral de Chile. Mi enfoque académico busca integrar la comprensión espacial del territorio con los procesos históricos que lo han moldeado.
+                </p>
+                <div class="flex items-center gap-4 mt-2">
+                    <img alt="Camilo Pinto Godoy" class="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-primary dark:border-accent" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJF-spkV2uqhTsae7iA8oUx0df0bP77E4vL1b11r-tDIB1evhu0NSXOjlaEUYCQ1iiS6UwgZblGEQ-0CHluZdtcdwonrcP0mbTRzZ2bPrBqYyQnVLOD2x63gUKHagStB-nFt5t3bITVUEUCEr0E_7w-GEpk-OehPUHZ0n7RwDkQlH5NPvIao_RDo2aH8ml5VlZqqClwi5EnEe5u_hq1lUmOBTBn3SNuGPEv0sS8pNDuf8bmfB0WkHfA8vYfOOaCXwRh4cc1bgrFoz8"/>
+                    <div>
+                        <p class="font-display font-bold text-base sm:text-lg dark:text-white">Camilo P. Godoy</p>
+                        <p class="text-xs sm:text-sm text-text-muted dark:text-gray-400">Universidad Austral de Chile</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="lg:w-2/3 grid sm:grid-cols-2 gap-6">
+                <div class="group p-6 sm:p-8 rounded-xl bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 hover:border-primary/50 dark:hover:border-accent/50 transition-all duration-300 hover:shadow-soft">
+                    <div class="w-12 h-12 rounded-lg bg-primary/10 dark:bg-accent/20 flex items-center justify-center mb-6 group-hover:bg-primary dark:group-hover:bg-accent group-hover:text-white transition-colors text-primary dark:text-accent">
+                        <span class="material-symbols-outlined text-3xl">landscape</span>
+                    </div>
+                    <h3 class="font-display text-lg sm:text-xl font-bold text-text-main dark:text-white mb-3">Geografía Social</h3>
+                    <p class="text-text-muted dark:text-gray-300 text-sm leading-relaxed">
+                        Investigación sobre cómo las comunidades habitan, transforman y significan sus espacios vitales en el sur de Chile.
                     </p>
-<div class="flex items-center gap-4 mt-2">
-<img alt="Camilo Pinto Godoy Portrait" class="w-16 h-16 rounded-full object-cover border-2 border-primary" data-alt="Portrait of a professor in academic attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJF-spkV2uqhTsae7iA8oUx0df0bP77E4vL1b11r-tDIB1evhu0NSXOjlaEUYCQ1iiS6UwgZblGEQ-0CHluZdtcdwonrcP0mbTRzZ2bPrBqYyQnVLOD2x63gUKHagStB-nFt5t3bITVUEUCEr0E_7w-GEpk-OehPUHZ0n7RwDkQlH5NPvIao_RDo2aH8ml5VlZqqClwi5EnEe5u_hq1lUmOBTBn3SNuGPEv0sS8pNDuf8bmfB0WkHfA8vYfOOaCXwRh4cc1bgrFoz8"/>
-<div>
-<p class="font-display font-bold text-lg dark:text-white">Camilo P. Godoy</p>
-<p class="text-sm text-text-muted dark:text-gray-400">Universidad Austral de Chile</p>
-</div>
-</div>
-</div>
-<div class="lg:w-2/3 grid sm:grid-cols-2 gap-6">
-<div class="group p-8 rounded-xl bg-background-light dark:bg-slate-700 border border-gray-200 dark:border-slate-600 hover:border-primary/50 transition-all duration-300 hover:shadow-soft">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
-<span class="material-symbols-outlined text-3xl">landscape</span>
-</div>
-<h3 class="font-display text-xl font-bold text-text-main dark:text-white mb-3">Geografía Social</h3>
-<p class="text-text-muted dark:text-gray-400 text-sm leading-relaxed">
-                            Investigación sobre cómo las comunidades habitan, transforman y significan sus espacios vitales en el sur de Chile.
-                        </p>
-</div>
-<div class="group p-8 rounded-xl bg-background-light dark:bg-slate-700 border border-gray-200 dark:border-slate-600 hover:border-primary/50 transition-all duration-300 hover:shadow-soft sm:mt-12">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
-<span class="material-symbols-outlined text-3xl">school</span>
-</div>
-<h3 class="font-display text-xl font-bold text-text-main dark:text-white mb-3">Didáctica</h3>
-<p class="text-text-muted dark:text-gray-400 text-sm leading-relaxed">
-                            Desarrollo de metodologías activas para la enseñanza de la Historia y las Ciencias Sociales en el aula contemporánea.
-                        </p>
-</div>
-<div class="group p-8 rounded-xl bg-background-light dark:bg-slate-700 border border-gray-200 dark:border-slate-600 hover:border-primary/50 transition-all duration-300 hover:shadow-soft">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
-<span class="material-symbols-outlined text-3xl">history_edu</span>
-</div>
-<h3 class="font-display text-xl font-bold text-text-main dark:text-white mb-3">Historia Regional</h3>
-<p class="text-text-muted dark:text-gray-400 text-sm leading-relaxed">
-                            Rescate y puesta en valor de la memoria local y el patrimonio cultural de la región de Los Ríos.
-                        </p>
-</div>
-<div class="flex items-center justify-center p-8 sm:mt-12">
-<div class="text-center">
-<span class="material-symbols-outlined text-4xl text-accent mb-4">format_quote</span>
-<p class="font-display italic text-lg text-text-muted dark:text-gray-300">
-                                "El territorio no es un escenario pasivo, es un actor más en la construcción de nuestra identidad."
-                             </p>
-<p class="text-sm font-bold mt-2 text-primary dark:text-accent">— Reflexión Personal</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="py-24 bg-background-light dark:bg-background-dark" id="analisis">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
-<div>
-<h2 class="font-display text-3xl sm:text-4xl font-bold text-text-main dark:text-white mb-2">Bitácora de Análisis</h2>
-<p class="text-text-muted dark:text-gray-400 font-light">Reflexiones desde Valdivia sobre historia y territorio.</p>
-</div>
-<a class="group flex items-center gap-2 text-primary dark:text-accent font-medium hover:text-primary-dark transition-colors" href="#">
-                    Ver todos los artículos 
-                    <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</a>
-</div>
-<div class="grid md:grid-cols-3 gap-8">
-<article class="flex flex-col group h-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg overflow-hidden hover:-translate-y-1 transition-all duration-300 hover:shadow-hover">
-<div class="h-48 w-full overflow-hidden relative">
-<div class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-3 py-1 rounded text-xs font-bold uppercase tracking-wider text-primary border border-gray-200 dark:border-slate-700 z-10">Educación</div>
-<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Classroom setting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCmpn2aee3e6UXtSKhRlmcO_FGFQGgg1pIbT2IhdRadKIH1kQ8jNkso6k9usmYPlu3wenrXgnYRWeGqOT4fxanQPa0MXeUrhQPEO8F47xVm4EJxvgqU3IgA58YYexvxfgIqPILoNXwSCHX3m59zHqdL3AsFT8_TPPVgwB6EuTqDKepj9IeNK0QJF-EiR1g-Bl_V8YI-gSjPvWhpdsV2qDDjMoheeAdu5NygE4j9smvQYKBLGSGnRbI10V4b35h9iK9j1CJ52f-cn4u0');"></div>
-<div class="absolute inset-0 bg-primary/20 mix-blend-multiply group-hover:bg-primary/10 transition-colors"></div>
-</div>
-<div class="p-6 flex flex-col flex-1">
-<div class="flex items-center gap-3 text-xs text-text-muted dark:text-gray-400 mb-3">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">calendar_today</span> 12 Oct, 2023</span>
-<span class="w-1 h-1 rounded-full bg-gray-300"></span>
-<span>5 min lectura</span>
-</div>
-<h3 class="font-display text-xl font-bold text-text-main dark:text-white mb-3 group-hover:text-primary dark:group-hover:text-accent transition-colors leading-tight">
-                            Formación Ciudadana en el Aula
-                        </h3>
-<p class="text-text-muted dark:text-gray-400 text-sm line-clamp-3 mb-4 flex-1">
-                            Estrategias para fomentar la participación democrática y el pensamiento crítico en estudiantes de enseñanza media.
-                        </p>
-<div class="pt-4 border-t border-gray-100 dark:border-slate-700">
-<span class="text-primary dark:text-accent text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">Leer artículo <span class="material-symbols-outlined text-base">arrow_right_alt</span></span>
-</div>
-</div>
-</article>
-<article class="flex flex-col group h-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg overflow-hidden hover:-translate-y-1 transition-all duration-300 hover:shadow-hover">
-<div class="h-48 w-full overflow-hidden relative">
-<div class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-3 py-1 rounded text-xs font-bold uppercase tracking-wider text-primary border border-gray-200 dark:border-slate-700 z-10">Geografía</div>
-<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Map or landscape of Los Rios region" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCB4ZqzOgPQ8I-E1X1VL02jrhcWHO9sq6jPG4bp4lfJcxuPLtV6-ydd-7UGQsQnLq2ijcY0ZQD6GMgugTYcJIZG1MBiZUfszRK7LMkDhxR4nV99rHZw5vf2j1oVlM-WuxZH9TmLwvFh79pPbQY9ohbmXyghPzLiWwzqSflnGRmiIlLy4WV8ZrrmWlkbVAI6C2I1tQ_5rZGrX7s6K9lcekxEpxTZnkb8YybgiYbtWA57QVLJWW0Gb4eAiagpAbrCmQsdd0rJVJKWrwSd');"></div>
-<div class="absolute inset-0 bg-primary/20 mix-blend-multiply group-hover:bg-primary/10 transition-colors"></div>
-</div>
-<div class="p-6 flex flex-col flex-1">
-<div class="flex items-center gap-3 text-xs text-text-muted dark:text-gray-400 mb-3">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">calendar_today</span> 28 Sep, 2023</span>
-<span class="w-1 h-1 rounded-full bg-gray-300"></span>
-<span>7 min lectura</span>
-</div>
-<h3 class="font-display text-xl font-bold text-text-main dark:text-white mb-3 group-hover:text-primary dark:group-hover:text-accent transition-colors leading-tight">
-                            Geografía Social de la Región de Los Ríos
-                        </h3>
-<p class="text-text-muted dark:text-gray-400 text-sm line-clamp-3 mb-4 flex-1">
-                            Un análisis de las dinámicas territoriales y los cambios demográficos recientes en la cuenca del Valdivia.
-                        </p>
-<div class="pt-4 border-t border-gray-100 dark:border-slate-700">
-<span class="text-primary dark:text-accent text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">Leer artículo <span class="material-symbols-outlined text-base">arrow_right_alt</span></span>
-</div>
-</div>
-</article>
-<article class="flex flex-col group h-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg overflow-hidden hover:-translate-y-1 transition-all duration-300 hover:shadow-hover">
-<div class="h-48 w-full overflow-hidden relative">
-<div class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-3 py-1 rounded text-xs font-bold uppercase tracking-wider text-primary border border-gray-200 dark:border-slate-700 z-10">Historia</div>
-<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Old buildings or monuments" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBdcJGqjc3tqqAq_k2qn09dYLgHvRxwagRqI5LowtiTLCJ83JAkWO7OAYWyio9eqgEo9iU71cgRQcqkNVkoSfXEAEXuwmjg4jtOtVTSPIZSScYKyIvCjFZN_XKop4I3o7uqvT_CC5n9okMt4n1bjQZEWPE0xNJNZCvemc1NOka5BbP_Eypj1gSSXUm7tM6OWTOOhgdcvvUvvcKkIv2nWywXGBEbecJq9eRiO6E36ek29S7FVkh7h72wYvmj26M3XBFEtiFq1RsALZMU');"></div>
-<div class="absolute inset-0 bg-primary/20 mix-blend-multiply group-hover:bg-primary/10 transition-colors"></div>
-</div>
-<div class="p-6 flex flex-col flex-1">
-<div class="flex items-center gap-3 text-xs text-text-muted dark:text-gray-400 mb-3">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">calendar_today</span> 15 Sep, 2023</span>
-<span class="w-1 h-1 rounded-full bg-gray-300"></span>
-<span>6 min lectura</span>
-</div>
-<h3 class="font-display text-xl font-bold text-text-main dark:text-white mb-3 group-hover:text-primary dark:group-hover:text-accent transition-colors leading-tight">
-                            Patrimonio y Memoria Local
-                        </h3>
-<p class="text-text-muted dark:text-gray-400 text-sm line-clamp-3 mb-4 flex-1">
-                            La importancia de preservar los relatos orales y la arquitectura patrimonial como herramientas pedagógicas.
-                        </p>
-<div class="pt-4 border-t border-gray-100 dark:border-slate-700">
-<span class="text-primary dark:text-accent text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">Leer artículo <span class="material-symbols-outlined text-base">arrow_right_alt</span></span>
-</div>
-</div>
-</article>
-</div>
-</div>
-</section>
-<section class="py-20 bg-primary/5 dark:bg-slate-800/50 border-y border-primary/10 dark:border-slate-700" id="recursos">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center max-w-2xl mx-auto mb-16">
-<span class="text-accent font-bold tracking-widest text-xs uppercase mb-2 block">Material Docente UACh</span>
-<h2 class="font-display text-3xl sm:text-4xl font-bold text-text-main dark:text-white mb-4">El Aula Digital</h2>
-<p class="text-text-muted dark:text-gray-300">Recursos curados para estudiantes de pedagogía y colegas. Descarga libre.</p>
-</div>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="flex items-start gap-4 p-5 bg-white dark:bg-slate-800 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
-<div class="flex-shrink-0 w-12 h-12 rounded-full bg-red-50 text-red-700 flex items-center justify-center">
-<span class="material-symbols-outlined">picture_as_pdf</span>
-</div>
-<div class="flex-1">
-<h4 class="font-bold text-text-main dark:text-white mb-1">Guía de Fuentes Regionales</h4>
-<p class="text-xs text-text-muted dark:text-gray-400 mb-3">PDF • 2.4 MB</p>
-<button class="text-xs font-semibold text-primary dark:text-accent uppercase tracking-wide flex items-center gap-1 hover:underline">
-                            Descargar <span class="material-symbols-outlined text-sm">download</span>
-</button>
-</div>
-</div>
-<div class="flex items-start gap-4 p-5 bg-white dark:bg-slate-800 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
-<div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-50 text-blue-700 flex items-center justify-center">
-<span class="material-symbols-outlined">history_edu</span>
-</div>
-<div class="flex-1">
-<h4 class="font-bold text-text-main dark:text-white mb-1">Línea de tiempo: Sur de Chile</h4>
-<p class="text-xs text-text-muted dark:text-gray-400 mb-3">Infografía • 5.1 MB</p>
-<button class="text-xs font-semibold text-primary dark:text-accent uppercase tracking-wide flex items-center gap-1 hover:underline">
-                            Descargar <span class="material-symbols-outlined text-sm">download</span>
-</button>
-</div>
-</div>
-<div class="flex items-start gap-4 p-5 bg-white dark:bg-slate-800 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
-<div class="flex-shrink-0 w-12 h-12 rounded-full bg-green-50 text-green-700 flex items-center justify-center">
-<span class="material-symbols-outlined">description</span>
-</div>
-<div class="flex-1">
-<h4 class="font-bold text-text-main dark:text-white mb-1">Rubrica de Ensayo Histórico</h4>
-<p class="text-xs text-text-muted dark:text-gray-400 mb-3">DOCX • 500 KB</p>
-<button class="text-xs font-semibold text-primary dark:text-accent uppercase tracking-wide flex items-center gap-1 hover:underline">
-                            Descargar <span class="material-symbols-outlined text-sm">download</span>
-</button>
-</div>
-</div>
-<div class="flex items-start gap-4 p-5 bg-white dark:bg-slate-800 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
-<div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-50 text-purple-700 flex items-center justify-center">
-<span class="material-symbols-outlined">map</span>
-</div>
-<div class="flex-1">
-<h4 class="font-bold text-text-main dark:text-white mb-1">Cartografía Histórica Valdivia</h4>
-<p class="text-xs text-text-muted dark:text-gray-400 mb-3">ZIP • 12 MB</p>
-<button class="text-xs font-semibold text-primary dark:text-accent uppercase tracking-wide flex items-center gap-1 hover:underline">
-                            Descargar <span class="material-symbols-outlined text-sm">download</span>
-</button>
-</div>
-</div>
-<div class="flex items-start gap-4 p-5 bg-white dark:bg-slate-800 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
-<div class="flex-shrink-0 w-12 h-12 rounded-full bg-orange-50 text-orange-700 flex items-center justify-center">
-<span class="material-symbols-outlined">slideshow</span>
-</div>
-<div class="flex-1">
-<h4 class="font-bold text-text-main dark:text-white mb-1">PPT: Geografía Física</h4>
-<p class="text-xs text-text-muted dark:text-gray-400 mb-3">PPTX • 8.5 MB</p>
-<button class="text-xs font-semibold text-primary dark:text-accent uppercase tracking-wide flex items-center gap-1 hover:underline">
-                            Descargar <span class="material-symbols-outlined text-sm">download</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</section>
-<footer class="bg-slate-800 text-white pt-20 pb-10 border-t border-slate-700" id="contacto">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-<div class="lg:col-span-1">
-<div class="flex items-center gap-2 mb-6">
-<span class="material-symbols-outlined text-accent text-3xl">school</span>
-<span class="font-display font-bold text-2xl tracking-tight">Camilo P. Godoy</span>
-</div>
-<p class="text-gray-400 text-sm leading-relaxed mb-6">
-                        Profesor de Historia y Geografía. Comprometido con la educación pública y la investigación territorial desde el sur de Chile.
+                </div>
+
+                <div class="group p-6 sm:p-8 rounded-xl bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 hover:border-primary/50 dark:hover:border-accent/50 transition-all duration-300 hover:shadow-soft sm:mt-12">
+                    <div class="w-12 h-12 rounded-lg bg-primary/10 dark:bg-accent/20 flex items-center justify-center mb-6 group-hover:bg-primary dark:group-hover:bg-accent group-hover:text-white transition-colors text-primary dark:text-accent">
+                        <span class="material-symbols-outlined text-3xl">school</span>
+                    </div>
+                    <h3 class="font-display text-lg sm:text-xl font-bold text-text-main dark:text-white mb-3">Didáctica</h3>
+                    <p class="text-text-muted dark:text-gray-300 text-sm leading-relaxed">
+                        Desarrollo de metodologías activas para la enseñanza de la Historia y las Ciencias Sociales en el aula contemporánea.
                     </p>
-<div class="flex gap-4">
-<a aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-primary transition-colors text-white" href="#">
-<span class="text-lg font-bold">in</span>
-</a>
-<a aria-label="ResearchGate" class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-primary transition-colors text-white" href="#">
-<span class="text-lg font-bold">Rg</span>
-</a>
-<a aria-label="Twitter" class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-primary transition-colors text-white" href="#">
-<span class="text-lg font-bold">X</span>
-</a>
-</div>
-</div>
-<div>
-<h4 class="font-display text-lg font-bold mb-6 text-white border-b border-slate-600 pb-2 inline-block">Navegación</h4>
-<ul class="space-y-3 text-sm text-gray-400">
-<li><a class="hover:text-accent transition-colors" href="#">Inicio</a></li>
-<li><a class="hover:text-accent transition-colors" href="#sobre-mi">Perfil Académico</a></li>
-<li><a class="hover:text-accent transition-colors" href="#analisis">Publicaciones</a></li>
-<li><a class="hover:text-accent transition-colors" href="#recursos">Aula Virtual</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-display text-lg font-bold mb-6 text-white border-b border-slate-600 pb-2 inline-block">Contacto</h4>
-<ul class="space-y-4 text-sm text-gray-400">
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-accent mt-0.5">mail</span>
-<span>camilo.pinto@uach.cl</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-accent mt-0.5">location_on</span>
-<span>Facultad de Filosofía y Humanidades,<br/>Valdivia, Chile</span>
-</li>
-</ul>
-</div>
-<div>
-<h4 class="font-display text-lg font-bold mb-6 text-white border-b border-slate-600 pb-2 inline-block">Newsletter</h4>
-<p class="text-sm text-gray-400 mb-4">Recibe actualizaciones sobre publicaciones y recursos docentes.</p>
-<form class="flex flex-col gap-3">
-<input class="w-full bg-slate-700 border border-slate-600 rounded px-4 py-2 text-sm text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent placeholder-gray-500" placeholder="Tu correo institucional" type="email"/>
-<button class="w-full bg-accent text-primary-dark font-bold text-sm py-2 px-4 rounded hover:bg-yellow-600 transition-colors" type="submit">
-                            Suscribirse
-                        </button>
-</form>
-</div>
-</div>
-<div class="pt-8 border-t border-slate-700 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-<p>© 2023 Camilo Pinto Godoy. Todos los derechos reservados.</p>
-<div class="flex gap-6">
-<a class="hover:text-gray-300" href="#">Política de Privacidad</a>
-<a class="hover:text-gray-300" href="#">Términos de Uso</a>
-</div>
-</div>
-</div>
+                </div>
+
+                <div class="group p-6 sm:p-8 rounded-xl bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 hover:border-primary/50 dark:hover:border-accent/50 transition-all duration-300 hover:shadow-soft">
+                    <div class="w-12 h-12 rounded-lg bg-primary/10 dark:bg-accent/20 flex items-center justify-center mb-6 group-hover:bg-primary dark:group-hover:bg-accent group-hover:text-white transition-colors text-primary dark:text-accent">
+                        <span class="material-symbols-outlined text-3xl">history_edu</span>
+                    </div>
+                    <h3 class="font-display text-lg sm:text-xl font-bold text-text-main dark:text-white mb-3">Historia Regional</h3>
+                    <p class="text-text-muted dark:text-gray-300 text-sm leading-relaxed">
+                        Rescate y puesta en valor de la memoria local y el patrimonio cultural de la región de Los Ríos.
+                    </p>
+                </div>
+
+                <div class="flex items-center justify-center p-6 sm:p-8 sm:mt-12">
+                    <div class="text-center">
+                        <span class="material-symbols-outlined text-4xl text-accent mb-4">format_quote</span>
+                        <p class="font-display italic text-base sm:text-lg text-text-muted dark:text-gray-300">
+                            "El territorio no es un escenario pasivo, es un actor más en la construcción de nuestra identidad."
+                        </p>
+                        <p class="text-xs sm:text-sm font-bold mt-2 text-primary dark:text-accent">— Reflexión Personal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ANÁLISIS SECTION -->
+<section class="py-16 sm:py-24 bg-gray-50 dark:bg-background-dark" id="analisis">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+            <div>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-text-main dark:text-white mb-2">Bitácora de Análisis</h2>
+                <p class="text-text-muted dark:text-gray-300 font-light">Reflexiones desde Valdivia sobre historia y territorio.</p>
+            </div>
+            <a class="group flex items-center gap-2 text-primary dark:text-accent font-medium hover:text-primary-dark dark:hover:text-accent-dark transition-colors" href="#">
+                Ver todos los artículos 
+                <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </a>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <!-- Article 1 -->
+            <article class="flex flex-col group h-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:-translate-y-1 transition-all duration-300 hover:shadow-hover">
+                <div class="h-48 w-full overflow-hidden relative">
+                    <div class="absolute top-4 left-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur px-3 py-1 rounded text-xs font-bold uppercase tracking-wider text-primary dark:text-accent border border-gray-200 dark:border-gray-700 z-10">Educación</div>
+                    <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCmpn2aee3e6UXtSKhRlmcO_FGFQGgg1pIbT2IhdRadKIH1kQ8jNkso6k9usmYPlu3wenrXgnYRWeGqOT4fxanQPa0MXeUrhQPEO8F47xVm4EJxvgqU3IgA58YYexvxfgIqPILoNXwSCHX3m59zHqdL3AsFT8_TPPVgwB6EuTqDKepj9IeNK0QJF-EiR1g-Bl_V8YI-gSjPvWhpdsV2qDDjMoheeAdu5NygE4j9smvQYKBLGSGnRbI10V4b35h9iK9j1CJ52f-cn4u0');"></div>
+                    <div class="absolute inset-0 bg-primary/20 dark:bg-primary/30 mix-blend-multiply group-hover:bg-primary/10 transition-colors"></div>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <div class="flex items-center gap-3 text-xs text-text-muted dark:text-gray-400 mb-3">
+                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">calendar_today</span> 12 Oct, 2023</span>
+                        <span class="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+                        <span>5 min lectura</span>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-text-main dark:text-white mb-3 group-hover:text-primary dark:group-hover:text-accent transition-colors leading-tight">
+                        Formación Ciudadana en el Aula
+                    </h3>
+                    <p class="text-text-muted dark:text-gray-300 text-sm line-clamp-3 mb-4 flex-1">
+                        Estrategias para fomentar la participación democrática y el pensamiento crítico en estudiantes de enseñanza media.
+                    </p>
+                    <div class="pt-4 border-t border-gray-100 dark:border-gray-700">
+                        <span class="text-primary dark:text-accent text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                            Leer artículo <span class="material-symbols-outlined text-base">arrow_right_alt</span>
+                        </span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="flex flex-col group h-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:-translate-y-1 transition-all duration-300 hover:shadow-hover">
+                <div class="h-48 w-full overflow-hidden relative">
+                    <div class="absolute top-4 left-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur px-3 py-1 rounded text-xs font-bold uppercase tracking-wider text-primary dark:text-accent border border-gray-200 dark:border-gray-700 z-10">Geografía</div>
+                    <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCB4ZqzOgPQ8I-E1X1VL02jrhcWHO9sq6jPG4bp4lfJcxuPLtV6-ydd-7UGQsQnLq2ijcY0ZQD6GMgugTYcJIZG1MBiZUfszRK7LMkDhxR4nV99rHZw5vf2j1oVlM-WuxZH9TmLwvFh79pPbQY9ohbmXyghPzLiWwzqSflnGRmiIlLy4WV8ZrrmWlkbVAI6C2I1tQ_5rZGrX7s6K9lcekxEpxTZnkb8YybgiYbtWA57QVLJWW0Gb4eAiagpAbrCmQsdd0rJVJKWrwSd');"></div>
+                    <div class="absolute inset-0 bg-primary/20 dark:bg-primary/30 mix-blend-multiply group-hover:bg-primary/10 transition-colors"></div>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <div class="flex items-center gap-3 text-xs text-text-muted dark:text-gray-400 mb-3">
+                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">calendar_today</span> 28 Sep, 2023</span>
+                        <span class="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+                        <span>7 min lectura</span>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-text-main dark:text-white mb-3 group-hover:text-primary dark:group-hover:text-accent transition-colors leading-tight">
+                        Geografía Social de la Región de Los Ríos
+                    </h3>
+                    <p class="text-text-muted dark:text-gray-300 text-sm line-clamp-3 mb-4 flex-1">
+                        Un análisis de las dinámicas territoriales y los cambios demográficos recientes en la cuenca del Valdivia.
+                    </p>
+                    <div class="pt-4 border-t border-gray-100 dark:border-gray-700">
+                        <span class="text-primary dark:text-accent text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                            Leer artículo <span class="material-symbols-outlined text-base">arrow_right_alt</span>
+                        </span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="flex flex-col group h-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:-translate-y-1 transition-all duration-300 hover:shadow-hover">
+                <div class="h-48 w-full overflow-hidden relative">
+                    <div class="absolute top-4 left-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur px-3 py-1 rounded text-xs font-bold uppercase tracking-wider text-primary dark:text-accent border border-gray-200 dark:border-gray-700 z-10">Historia</div>
+                    <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBdcJGqjc3tqqAq_k2qn09dYLgHvRxwagRqI5LowtiTLCJ83JAkWO7OAYWyio9eqgEo9iU71cgRQcqkNVkoSfXEAEXuwmjg4jtOtVTSPIZSScYKyIvCjFZN_XKop4I3o7uqvT_CC5n9okMt4n1bjQZEWPE0xNJNZCvemc1NOka5BbP_Eypj1gSSXUm7tM6OWTOOhgdcvvUvvcKkIv2nWywXGBEbecJq9eRiO6E36ek29S7FVkh7h72wYvmj26M3XBFEtiFq1RsALZMU');"></div>
+                    <div class="absolute inset-0 bg-primary/20 dark:bg-primary/30 mix-blend-multiply group-hover:bg-primary/10 transition-colors"></div>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <div class="flex items-center gap-3 text-xs text-text-muted dark:text-gray-400 mb-3">
+                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">calendar_today</span> 15 Sep, 2023</span>
+                        <span class="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+                        <span>6 min lectura</span>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-text-main dark:text-white mb-3 group-hover:text-primary dark:group-hover:text-accent transition-colors leading-tight">
+                        Patrimonio y Memoria Local
+                    </h3>
+                    <p class="text-text-muted dark:text-gray-300 text-sm line-clamp-3 mb-4 flex-1">
+                        La importancia de preservar los relatos orales y la arquitectura patrimonial como herramientas pedagógicas.
+                    </p>
+                    <div class="pt-4 border-t border-gray-100 dark:border-gray-700">
+                        <span class="text-primary dark:text-accent text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                            Leer artículo <span class="material-symbols-outlined text-base">arrow_right_alt</span>
+                        </span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- RECURSOS SECTION -->
+<section class="py-16 sm:py-20 bg-primary/5 dark:bg-gray-800/50 border-y border-primary/10 dark:border-gray-700" id="recursos">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+            <span class="text-accent font-bold tracking-widest text-xs uppercase mb-2 block">Material Docente UACh</span>
+            <h2 class="font-display text-3xl sm:text-4xl font-bold text-text-main dark:text-white mb-4">El Aula Digital</h2>
+            <p class="text-text-muted dark:text-gray-300">Recursos curados para estudiantes de pedagogía y colegas. Descarga libre.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Resource Cards -->
+            <div class="flex items-start gap-4 p-5 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400 flex items-center justify-center">
+                    <span class="material-symbols-outlined">picture_as_pdf</span>
+                </div>
+                <div class="flex-1">
+                    <h4 class="font-bold text-text-main dark:text-white mb-1">Guía de Fuentes Regionales</h4>
+                    <p class="text-xs text-text-muted dark:text-gray-400 mb-3">PDF • 2.4 MB</p>
+                    <button class="text-xs font-semibold text-primary dark:text-accent uppercase tracking-wide flex items-center gap-1 hover:underline">
+                        Descargar <span class="material-symbols-outlined text-sm">download</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 flex items-center justify-center">
+                    <span class="material-symbols-outlined">history_edu</span>
+                </div>
+                <div class="flex-1">
+                    <h4 class="font-bold text-text-main dark:text-white mb-1">Línea de tiempo: Sur de Chile</h4>
+                    <p class="text-xs text-text-muted dark:text-gray-400 mb-3">Infografía • 5.1 MB</p>
+                    <button class="text-xs font-semibold text-primary dark:text-accent uppercase tracking-wide flex items-center gap-1 hover:underline">
+                        Descargar <span class="material-symbols-outlined text-sm">download</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400 flex items-center justify-center">
+                    <span class="material-symbols-outlined">description</span>
+                </div>
+                <div class="flex-1">
+                    <h4 class="font-bold text-text-main dark:text-white mb-1">Rubrica de Ensayo Histórico</h4>
+                    <p class="text-xs text-text-muted dark:text-gray-400 mb-3">DOCX • 500 KB</p>
+                    <button class="text-xs font-semibold text-primary dark:text-accent uppercase tracking-wide flex items-center gap-1 hover:underline">
+                        Descargar <span class="material-symbols-outlined text-sm">download</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 flex items-center justify-center">
+                    <span class="material-symbols-outlined">map</span>
+                </div>
+                <div class="flex-1">
+                    <h4 class="font-bold text-text-main dark:text-white mb-1">Cartografía Histórica Valdivia</h4>
+                    <p class="text-xs text-text-muted dark:text-gray-400 mb-3">ZIP • 12 MB</p>
+                    <button class="text-xs font-semibold text-primary dark:text-accent uppercase tracking-wide flex items-center gap-1 hover:underline">
+                        Descargar <span class="material-symbols-outlined text-sm">download</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 flex items-center justify-center">
+                    <span class="material-symbols-outlined">slideshow</span>
+                </div>
+                <div class="flex-1">
+                    <h4 class="font-bold text-text-main dark:text-white mb-1">PPT: Geografía Física</h4>
+                    <p class="text-xs text-text-muted dark:text-gray-400 mb-3">PPTX • 8.5 MB</p>
+                    <button class="text-xs font-semibold text-primary dark:text-accent uppercase tracking-wide flex items-center gap-1 hover:underline">
+                        Descargar <span class="material-symbols-outlined text-sm">download</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 dark:bg-black text-white pt-16 sm:pt-20 pb-10 border-t border-gray-800 dark:border-gray-900" id="contacto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            <!-- Brand Column -->
+            <div class="lg:col-span-1">
+                <div class="flex items-center gap-2 mb-6">
+                    <span class="material-symbols-outlined text-accent text-3xl">school</span>
+                    <span class="font-display font-bold text-2xl tracking-tight">Camilo P. Godoy</span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                    Profesor de Historia y Geografía. Comprometido con la educación pública y la investigación territorial desde el sur de Chile.
+                </p>
+                <div class="flex gap-4">
+                    <a aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white" href="#">
+                        <span class="text-lg font-bold">in</span>
+                    </a>
+                    <a aria-label="ResearchGate" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white" href="#">
+                        <span class="text-lg font-bold">Rg</span>
+                    </a>
+                    <a aria-label="Twitter" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white" href="#">
+                        <span class="text-lg font-bold">X</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div>
+                <h4 class="font-display text-lg font-bold mb-6 text-white border-b border-gray-800 pb-2 inline-block">Navegación</h4>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li><a class="hover:text-accent transition-colors" href="#inicio">Inicio</a></li>
+                    <li><a class="hover:text-accent transition-colors" href="#sobre-mi">Perfil Académico</a></li>
+                    <li><a class="hover:text-accent transition-colors" href="#analisis">Publicaciones</a></li>
+                    <li><a class="hover:text-accent transition-colors" href="#recursos">Aula Virtual</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h4 class="font-display text-lg font-bold mb-6 text-white border-b border-gray-800 pb-2 inline-block">Contacto</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-accent mt-0.5">mail</span>
+                        <span>camilo.pinto@uach.cl</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-accent mt-0.5">location_on</span>
+                        <span>Facultad de Filosofía y Humanidades,<br/>Valdivia, Chile</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div>
+                <h4 class="font-display text-lg font-bold mb-6 text-white border-b border-gray-800 pb-2 inline-block">Newsletter</h4>
+                <p class="text-sm text-gray-400 mb-4">Recibe actualizaciones sobre publicaciones y recursos docentes.</p>
+                <form id="newsletter-form" class="flex flex-col gap-3">
+                    <input id="newsletter-email" class="w-full bg-gray-800 border border-gray-700 rounded px-4 py-2 text-sm text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent placeholder-gray-500" placeholder="Tu correo institucional" type="email" required/>
+                    <button class="w-full bg-accent hover:bg-accent-dark text-gray-900 font-bold text-sm py-2 px-4 rounded transition-colors" type="submit">
+                        Suscribirse
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+            <p>© 2023 Camilo Pinto Godoy. Todos los derechos reservados.</p>
+            <div class="flex gap-6">
+                <a class="hover:text-gray-300 transition-colors" href="#">Política de Privacidad</a>
+                <a class="hover:text-gray-300 transition-colors" href="#">Términos de Uso</a>
+            </div>
+        </div>
+    </div>
 </footer>
 
-</body></html>
+<!-- JAVASCRIPT -->
+<script>
+// ========================================
+// 🎯 MOBILE MENU FUNCTIONALITY
+// ========================================
+(function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+    const body = document.body;
+
+    let isMenuOpen = false;
+
+    // Toggle mobile menu
+    function toggleMobileMenu() {
+        isMenuOpen = !isMenuOpen;
+        
+        if (isMenuOpen) {
+            // Open menu
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('mobile-menu-enter');
+            menuIcon.textContent = 'close';
+            mobileMenuButton.setAttribute('aria-expanded', 'true');
+            body.classList.add('menu-open');
+        } else {
+            // Close menu
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('mobile-menu-enter');
+            menuIcon.textContent = 'menu';
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+            body.classList.remove('menu-open');
+        }
+    }
+
+    // Button click handler
+    mobileMenuButton.addEventListener('click', toggleMobileMenu);
+
+    // Close menu when clicking on a link
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (isMenuOpen) {
+                toggleMobileMenu();
+            }
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (isMenuOpen && 
+            !mobileMenu.contains(e.target) && 
+            !mobileMenuButton.contains(e.target)) {
+            toggleMobileMenu();
+        }
+    });
+
+    // Close menu on ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && isMenuOpen) {
+            toggleMobileMenu();
+        }
+    });
+
+    // Close menu on window resize (if menu is open when switching to desktop)
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768 && isMenuOpen) {
+            toggleMobileMenu();
+        }
+    });
+})();
+
+// ========================================
+// 🌓 DARK MODE TOGGLE FUNCTIONALITY
+// ========================================
+(function() {
+    const html = document.documentElement;
+    const themeToggleDesktop = document.getElementById('theme-toggle-desktop');
+    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+    const themeIcons = document.querySelectorAll('.theme-icon');
+
+    // Check for saved theme preference or default to 'light'
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    
+    // Apply saved theme on load
+    if (currentTheme === 'dark') {
+        html.classList.remove('light');
+        html.classList.add('dark');
+        updateIcons('light_mode');
+    } else {
+        html.classList.remove('dark');
+        html.classList.add('light');
+        updateIcons('dark_mode');
+    }
+
+    // Update all theme icons
+    function updateIcons(iconName) {
+        themeIcons.forEach(icon => {
+            icon.textContent = iconName;
+        });
+    }
+
+    // Toggle theme function
+    function toggleTheme() {
+        const isDark = html.classList.contains('dark');
+        
+        if (isDark) {
+            // Switch to light mode
+            html.classList.remove('dark');
+            html.classList.add('light');
+            localStorage.setItem('theme', 'light');
+            updateIcons('dark_mode');
+        } else {
+            // Switch to dark mode
+            html.classList.remove('light');
+            html.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+            updateIcons('light_mode');
+        }
+
+        // Add loading animation
+        themeIcons.forEach(icon => {
+            icon.classList.add('theme-toggle-loading');
+            setTimeout(() => {
+                icon.classList.remove('theme-toggle-loading');
+            }, 500);
+        });
+    }
+
+    // Add event listeners
+    if (themeToggleDesktop) {
+        themeToggleDesktop.addEventListener('click', toggleTheme);
+    }
+    if (themeToggleMobile) {
+        themeToggleMobile.addEventListener('click', toggleTheme);
+    }
+
+    // Keyboard accessibility
+    [themeToggleDesktop, themeToggleMobile].forEach(button => {
+        if (button) {
+            button.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleTheme();
+                }
+            });
+        }
+    });
+})();
+
+// ========================================
+// 🔗 SMOOTH SCROLL FOR ANCHOR LINKS
+// ========================================
+(function() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            
+            // Skip if href is just "#"
+            if (href === '#') {
+                e.preventDefault();
+                return;
+            }
+
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                
+                // Get header height for offset
+                const headerHeight = document.querySelector('header').offsetHeight;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+})();
+
+// ========================================
+// 📧 NEWSLETTER FORM HANDLER
+// ========================================
+(function() {
+    const newsletterForm = document.getElementById('newsletter-form');
+    
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const emailInput = document.getElementById('newsletter-email');
+            const submitButton = this.querySelector('button[type="submit"]');
+            const email = emailInput.value;
+            
+            // Validate email
+            if (!email || !email.includes('@')) {
+                alert('Por favor ingresa un correo electrónico válido.');
+                return;
+            }
+            
+            // Change button state
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Enviando...';
+            submitButton.disabled = true;
+            
+            // Simulate API call (replace with actual endpoint)
+            setTimeout(() => {
+                alert('¡Gracias por suscribirte! Te mantendremos informado.');
+                emailInput.value = '';
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            }, 1000);
+            
+            // TODO: Replace setTimeout with actual fetch call
+            // try {
+            //     const response = await fetch('/api/newsletter', {
+            //         method: 'POST',
+            //         headers: { 'Content-Type': 'application/json' },
+            //         body: JSON.stringify({ email })
+            //     });
+            //     
+            //     if (response.ok) {
+            //         alert('¡Gracias por suscribirte!');
+            //         emailInput.value = '';
+            //     } else {
+            //         alert('Hubo un error. Por favor intenta de nuevo.');
+            //     }
+            // } catch (error) {
+            //     alert('Error de conexión. Por favor intenta más tarde.');
+            // } finally {
+            //     submitButton.textContent = originalText;
+            //     submitButton.disabled = false;
+            // }
+        });
+    }
+})();
+
+// ========================================
+// 🎨 SCROLL ANIMATIONS (Optional Enhancement)
+// ========================================
+(function() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe article cards
+    document.querySelectorAll('article').forEach(article => {
+        article.style.opacity = '0';
+        article.style.transform = 'translateY(20px)';
+        article.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(article);
+    });
+})();
+
+// ========================================
+// 📱 DETECT MOBILE/DESKTOP
+// ========================================
+(function() {
+    function setViewportClass() {
+        const isMobile = window.innerWidth < 768;
+        document.body.classList.toggle('mobile-view', isMobile);
+        document.body.classList.toggle('desktop-view', !isMobile);
+    }
+
+    setViewportClass();
+    window.addEventListener('resize', setViewportClass);
+})();
+        
+</script>
+
+</body>
+</html>
