@@ -3,12 +3,18 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Camilo  Godoy - Historiador & Geógrafo</title>
+<title>Camilo Pinto Godoy - Historiador & Geógrafo</title>
 
 <!-- SEO Meta Tags -->
 <meta name="description" content="Historiador y Geógrafo especializado en territorio, geografía social y didáctica. Universidad Austral de Chile."/>
 <meta name="keywords" content="historia, geografía, Valdivia, Chile, educación, territorio"/>
 <meta name="author" content="Camilo Pinto Godoy"/>
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Camilo Pinto Godoy - Historiador & Geógrafo"/>
+<meta property="og:description" content="Historiador y Geógrafo especializado en territorio, geografía social y didáctica."/>
+<meta property="og:image" content="https://pbs.twimg.com/profile_images/1860280939978379264/v4FFisMo.jpg"/>
+<meta property="og:type" content="website"/>
 
 <!-- Preconnect -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -25,15 +31,15 @@ tailwind.config = {
     theme: {
         extend: {
             colors: {
-                "primary": "#065F46", // Emerald 800 - Mejor contraste
-                "primary-dark": "#064E3B", // Emerald 900
-                "accent": "#F59E0B", // Amber 500 - Mejor visibilidad
-                "accent-dark": "#D97706", // Amber 600
+                "primary": "#065F46",
+                "primary-dark": "#064E3B",
+                "accent": "#F59E0B",
+                "accent-dark": "#D97706",
                 "background-light": "#FFFFFF",
-                "background-dark": "#1F2937", // Gray 800
-                "text-main": "#111827", // Gray 900
-                "text-muted": "#6B7280", // Gray 500
-                "text-dark": "#F9FAFB", // Gray 50
+                "background-dark": "#1F2937",
+                "text-main": "#111827",
+                "text-muted": "#6B7280",
+                "text-dark": "#F9FAFB",
             },
             fontFamily: {
                 "display": ["Playfair Display", "serif"],
@@ -106,44 +112,35 @@ html {
     animation: slideDown 0.3s ease-out;
 }
 
-.mobile-menu-backdrop {
-    animation: fadeIn 0.3s ease-out;
-}
-
-/* Prevent scroll when menu is open */
 body.menu-open {
     overflow: hidden;
 }
 
-/* Better focus states for accessibility */
 a:focus-visible, button:focus-visible {
     outline: 2px solid #F59E0B;
     outline-offset: 2px;
 }
 
-/* Dark mode transitions */
 * {
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
-/* Improved contrast for dark mode */
 .dark .bg-white {
-    background-color: #374151 !important; /* Gray 700 */
+    background-color: #374151 !important;
 }
 
 .dark .border-gray-200 {
-    border-color: #4B5563 !important; /* Gray 600 */
+    border-color: #4B5563 !important;
 }
 
 .dark .text-text-main {
-    color: #F9FAFB !important; /* Gray 50 */
+    color: #F9FAFB !important;
 }
 
 .dark .text-text-muted {
-    color: #D1D5DB !important; /* Gray 300 */
+    color: #D1D5DB !important;
 }
 
-/* Loading animation for theme toggle */
 .theme-toggle-loading {
     animation: spin 0.5s linear;
 }
@@ -151,6 +148,47 @@ a:focus-visible, button:focus-visible {
 @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
+}
+
+/* Animaciones para la sección Sobre Mí */
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes expand {
+    from { width: 0; }
+    to { width: 33.333%; }
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slide-in {
+    animation: slide-in 0.6s ease-out;
+}
+
+.animate-expand {
+    animation: expand 0.8s ease-out 0.3s backwards;
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out backwards;
+    opacity: 0;
 }
 
 /* Responsive improvements */
@@ -164,6 +202,26 @@ a:focus-visible, button:focus-visible {
         max-width: 100%;
         padding: 0 1rem;
     }
+}
+
+/* Efecto de gradiente en hover de imagen */
+@keyframes pulse-ring {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse-ring {
+    animation: pulse-ring 2s ease-in-out infinite;
 }
 </style>
 </head>
@@ -296,30 +354,71 @@ a:focus-visible, button:focus-visible {
     </div>
 </section>
 
-<!-- SOBRE MÍ SECTION -->
+<!-- SOBRE MÍ SECTION - CORREGIDA -->
 <section class="py-16 sm:py-20 bg-white dark:bg-gray-800 border-y border-gray-100 dark:border-gray-700" id="sobre-mi">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+            
             <!-- Sticky Sidebar -->
             <div class="lg:w-1/3 flex flex-col gap-6 lg:sticky lg:top-24">
-                <h2 class="font-display text-3xl sm:text-4xl font-bold text-text-main dark:text-white relative inline-block">
-                    Sobre Mí
-                    <span class="absolute -bottom-2 left-0 w-1/3 h-1 bg-accent"></span>
-                </h2>
-                <p class="text-base sm:text-lg text-text-muted dark:text-gray-300 leading-relaxed font-light">
+                
+                <!-- Título con animación -->
+                <div class="overflow-hidden">
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-text-main dark:text-white relative inline-block animate-slide-in">
+                        Sobre Mí
+                        <span class="absolute -bottom-2 left-0 w-1/3 h-1 bg-accent animate-expand"></span>
+                    </h2>
+                </div>
+                
+                <!-- Descripción con fade-in -->
+                <p class="text-base sm:text-lg text-text-muted dark:text-gray-300 leading-relaxed font-light animate-fade-in-up" style="animation-delay: 0.2s;">
                     Licenciado en Historia y Licenciado en Educación por la Universidad Austral de Chile. Mi enfoque académico busca integrar la comprensión espacial del territorio con los procesos históricos que lo han moldeado.
                 </p>
-<div class="flex items-center gap-4 mt-2">
-    <img alt="Camilo Pinto Godoy" class="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-primary dark:border-accent" loading="lazy" src="https://pbs.twimg.com/profile_images/1860280939978379264/v4FFisMo.jpg"/>
-    <div>
-        <p class="font-display font-bold text-base sm:text-lg dark:text-white">Camilo P. Godoy</p>
-        <p class="text-xs sm:text-sm text-text-muted dark:text-gray-400">Universidad Austral de Chile</p>
-    </div>
-</div>                    <div>
-                        <p class="font-display font-bold text-base sm:text-lg dark:text-white">Camilo Pinto Godoy</p>
-                        <p class="text-xs sm:text-sm text-text-muted dark:text-gray-400">Universidad Austral de Chile</p>
+                
+                <!-- Tarjeta de Perfil con efectos premium -->
+                <div class="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-br from-gray-50 to-white dark:from-gray-700 dark:to-gray-800 border border-gray-200 dark:border-gray-600 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 animate-fade-in-up group" style="animation-delay: 0.4s;">
+                    
+                    <!-- Imagen con efectos hover -->
+                    <div class="relative flex-shrink-0">
+                        <img 
+                            alt="Camilo Pinto Godoy - Historiador y Geógrafo" 
+                            class="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-3 border-primary dark:border-accent shadow-md group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 ring-2 ring-primary/20 dark:ring-accent/20 group-hover:ring-4 group-hover:ring-primary/40 dark:group-hover:ring-accent/40" 
+                            loading="lazy" 
+                            src="https://pbs.twimg.com/profile_images/1860280939978379264/v4FFisMo.jpg"
+                        />
+                        <!-- Badge verificado con animación -->
+                        <div class="absolute -bottom-1 -right-1 w-6 h-6 bg-primary dark:bg-accent rounded-full flex items-center justify-center border-2 border-white dark:border-gray-800 shadow-sm group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-white text-sm animate-pulse-ring">verified</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Info con animación hover -->
+                    <div class="flex-1 min-w-0">
+                        <p class="font-display font-bold text-base sm:text-lg text-text-main dark:text-white group-hover:text-primary dark:group-hover:text-accent transition-colors duration-300 truncate">
+                            Camilo Pinto Godoy
+                        </p>
+                        <p class="text-xs sm:text-sm text-text-muted dark:text-gray-400 flex items-center gap-1 mt-1">
+                            <span class="material-symbols-outlined text-base flex-shrink-0">school</span>
+                            <span class="truncate">Universidad Austral de Chile</span>
+                        </p>
+                        <!-- Badge académico -->
+                        <div class="flex items-center gap-2 mt-2 flex-wrap">
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-primary/10 dark:bg-accent/20 text-primary dark:text-accent border border-primary/20 dark:border-accent/30">
+                                🎓 Docente
+                            </span>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-primary/10 dark:bg-accent/20 text-primary dark:text-accent border border-primary/20 dark:border-accent/30">
+                                📚 Investigador
+                            </span>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Botón de contacto adicional -->
+                <a href="mailto:camilo.pinto@uach.cl" class="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-primary dark:bg-accent hover:bg-primary-dark dark:hover:bg-accent-dark rounded-lg shadow-soft hover:shadow-hover transition-all duration-300 group animate-fade-in-up" style="animation-delay: 0.6s;">
+                    <span class="material-symbols-outlined text-xl group-hover:rotate-12 transition-transform">mail</span>
+                    Enviar mensaje
+                </a>
+                
             </div>
 
             <!-- Cards Grid -->
@@ -554,20 +653,20 @@ a:focus-visible, button:focus-visible {
             <div class="lg:col-span-1">
                 <div class="flex items-center gap-2 mb-6">
                     <span class="material-symbols-outlined text-accent text-3xl">school</span>
-                    <span class="font-display font-bold text-2xl tracking-tight">Camilo  Godoy</span>
+                    <span class="font-display font-bold text-2xl tracking-tight">Camilo P. Godoy</span>
                 </div>
                 <p class="text-gray-400 text-sm leading-relaxed mb-6">
                     Profesor de Historia y Geografía. Comprometido con la educación pública y la investigación territorial desde el sur de Chile.
                 </p>
                 <div class="flex gap-4">
-                    <a aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white" href="#">
+                    <a aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
                         <span class="text-lg font-bold">in</span>
                     </a>
-                    <a aria-label="ResearchGate" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white" href="#">
+                    <a aria-label="ResearchGate" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white" href="https://www.researchgate.net" target="_blank" rel="noopener noreferrer">
                         <span class="text-lg font-bold">Rg</span>
                     </a>
-                    <a aria-label="Twitter" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white" href="#">
-                        <span class="text-lg font-bold">X</span>
+                    <a aria-label="Twitter/X" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white" href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                        <span class="text-lg font-bold">𝕏</span>
                     </a>
                 </div>
             </div>
@@ -589,7 +688,7 @@ a:focus-visible, button:focus-visible {
                 <ul class="space-y-4 text-sm text-gray-400">
                     <li class="flex items-start gap-3">
                         <span class="material-symbols-outlined text-accent mt-0.5">mail</span>
-                        <span>camilo.@uach.cl</span>
+                        <a href="mailto:camilo.pinto@uach.cl" class="hover:text-accent transition-colors">camilo.pinto@uach.cl</a>
                     </li>
                     <li class="flex items-start gap-3">
                         <span class="material-symbols-outlined text-accent mt-0.5">location_on</span>
@@ -613,7 +712,7 @@ a:focus-visible, button:focus-visible {
 
         <!-- Copyright -->
         <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-            <p>© 2023 Camilo  Godoy. Todos los derechos reservados.</p>
+            <p>© 2023 Camilo Pinto Godoy. Todos los derechos reservados.</p>
             <div class="flex gap-6">
                 <a class="hover:text-gray-300 transition-colors" href="#">Política de Privacidad</a>
                 <a class="hover:text-gray-300 transition-colors" href="#">Términos de Uso</a>
@@ -636,19 +735,16 @@ a:focus-visible, button:focus-visible {
 
     let isMenuOpen = false;
 
-    // Toggle mobile menu
     function toggleMobileMenu() {
         isMenuOpen = !isMenuOpen;
         
         if (isMenuOpen) {
-            // Open menu
             mobileMenu.classList.remove('hidden');
             mobileMenu.classList.add('mobile-menu-enter');
             menuIcon.textContent = 'close';
             mobileMenuButton.setAttribute('aria-expanded', 'true');
             body.classList.add('menu-open');
         } else {
-            // Close menu
             mobileMenu.classList.add('hidden');
             mobileMenu.classList.remove('mobile-menu-enter');
             menuIcon.textContent = 'menu';
@@ -657,10 +753,8 @@ a:focus-visible, button:focus-visible {
         }
     }
 
-    // Button click handler
     mobileMenuButton.addEventListener('click', toggleMobileMenu);
 
-    // Close menu when clicking on a link
     mobileMenuLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (isMenuOpen) {
@@ -669,7 +763,6 @@ a:focus-visible, button:focus-visible {
         });
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (isMenuOpen && 
             !mobileMenu.contains(e.target) && 
@@ -678,14 +771,12 @@ a:focus-visible, button:focus-visible {
         }
     });
 
-    // Close menu on ESC key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && isMenuOpen) {
             toggleMobileMenu();
         }
     });
 
-    // Close menu on window resize (if menu is open when switching to desktop)
     window.addEventListener('resize', () => {
         if (window.innerWidth >= 768 && isMenuOpen) {
             toggleMobileMenu();
@@ -702,10 +793,8 @@ a:focus-visible, button:focus-visible {
     const themeToggleMobile = document.getElementById('theme-toggle-mobile');
     const themeIcons = document.querySelectorAll('.theme-icon');
 
-    // Check for saved theme preference or default to 'light'
     const currentTheme = localStorage.getItem('theme') || 'light';
     
-    // Apply saved theme on load
     if (currentTheme === 'dark') {
         html.classList.remove('light');
         html.classList.add('dark');
@@ -716,32 +805,27 @@ a:focus-visible, button:focus-visible {
         updateIcons('dark_mode');
     }
 
-    // Update all theme icons
     function updateIcons(iconName) {
         themeIcons.forEach(icon => {
             icon.textContent = iconName;
         });
     }
 
-    // Toggle theme function
     function toggleTheme() {
         const isDark = html.classList.contains('dark');
         
         if (isDark) {
-            // Switch to light mode
             html.classList.remove('dark');
             html.classList.add('light');
             localStorage.setItem('theme', 'light');
             updateIcons('dark_mode');
         } else {
-            // Switch to dark mode
             html.classList.remove('light');
             html.classList.add('dark');
             localStorage.setItem('theme', 'dark');
             updateIcons('light_mode');
         }
 
-        // Add loading animation
         themeIcons.forEach(icon => {
             icon.classList.add('theme-toggle-loading');
             setTimeout(() => {
@@ -750,7 +834,6 @@ a:focus-visible, button:focus-visible {
         });
     }
 
-    // Add event listeners
     if (themeToggleDesktop) {
         themeToggleDesktop.addEventListener('click', toggleTheme);
     }
@@ -758,7 +841,6 @@ a:focus-visible, button:focus-visible {
         themeToggleMobile.addEventListener('click', toggleTheme);
     }
 
-    // Keyboard accessibility
     [themeToggleDesktop, themeToggleMobile].forEach(button => {
         if (button) {
             button.addEventListener('keydown', (e) => {
@@ -779,7 +861,6 @@ a:focus-visible, button:focus-visible {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
             
-            // Skip if href is just "#"
             if (href === '#') {
                 e.preventDefault();
                 return;
@@ -789,7 +870,6 @@ a:focus-visible, button:focus-visible {
             if (target) {
                 e.preventDefault();
                 
-                // Get header height for offset
                 const headerHeight = document.querySelector('header').offsetHeight;
                 const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
                 
@@ -816,51 +896,27 @@ a:focus-visible, button:focus-visible {
             const submitButton = this.querySelector('button[type="submit"]');
             const email = emailInput.value;
             
-            // Validate email
             if (!email || !email.includes('@')) {
                 alert('Por favor ingresa un correo electrónico válido.');
                 return;
             }
             
-            // Change button state
             const originalText = submitButton.textContent;
             submitButton.textContent = 'Enviando...';
             submitButton.disabled = true;
             
-            // Simulate API call (replace with actual endpoint)
             setTimeout(() => {
                 alert('¡Gracias por suscribirte! Te mantendremos informado.');
                 emailInput.value = '';
                 submitButton.textContent = originalText;
                 submitButton.disabled = false;
             }, 1000);
-            
-            // TODO: Replace setTimeout with actual fetch call
-            // try {
-            //     const response = await fetch('/api/newsletter', {
-            //         method: 'POST',
-            //         headers: { 'Content-Type': 'application/json' },
-            //         body: JSON.stringify({ email })
-            //     });
-            //     
-            //     if (response.ok) {
-            //         alert('¡Gracias por suscribirte!');
-            //         emailInput.value = '';
-            //     } else {
-            //         alert('Hubo un error. Por favor intenta de nuevo.');
-            //     }
-            // } catch (error) {
-            //     alert('Error de conexión. Por favor intenta más tarde.');
-            // } finally {
-            //     submitButton.textContent = originalText;
-            //     submitButton.disabled = false;
-            // }
         });
     }
 })();
 
 // ========================================
-// 🎨 SCROLL ANIMATIONS (Optional Enhancement)
+// 🎨 SCROLL ANIMATIONS
 // ========================================
 (function() {
     const observerOptions = {
@@ -877,7 +933,6 @@ a:focus-visible, button:focus-visible {
         });
     }, observerOptions);
 
-    // Observe article cards
     document.querySelectorAll('article').forEach(article => {
         article.style.opacity = '0';
         article.style.transform = 'translateY(20px)';
@@ -899,7 +954,7 @@ a:focus-visible, button:focus-visible {
     setViewportClass();
     window.addEventListener('resize', setViewportClass);
 })();
-        
+
 </script>
 
 </body>
